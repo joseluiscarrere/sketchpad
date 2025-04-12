@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(175, 224, 244);
+}
+
+h1 {
+    font-family: Pacifico, Times New Roman;
+    font-size: 48px;
+    color: red;
+    margin: 0;
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    height: 960px;
+    width: 960px;
+    margin: auto;
+}
+
+.inner-container {
+    display: flex;
+    width: 960px;
+    height: -webkit-fill-available;
+}
+
+.square-div {
+    background-color: white;
+    height: -webkit-fill-available;
+    width: -webkit-fill-available;
+    border: 1px solid black;
+}
+
+button {
+    width: 200px;
+    height: 100px;
+    font-size: 32px;
+    margin: auto;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-radius: 25px;
+    display: block;
+}
