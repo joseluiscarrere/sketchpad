@@ -1,5 +1,5 @@
 //default number of squares per side on grid
-let numSquares = 16;
+let numSquares = 80;
 
 let outerContainer = document.querySelector('.outer-container');
 
@@ -44,7 +44,7 @@ button.addEventListener("click", function () {
     while (true) {
         // if cancel button is pressed
         if (numSquares === null) {
-            numSquares = 16;
+            numSquares = 80;
             break;
         } else if (numSquares <= 100) {
             break;
