@@ -24,13 +24,26 @@ const randColor = () => {
     return Math.floor(Math.random() * 256);
 }
 
-// Event listener function to produce "hover" effect over squares in grid that changes their color when mouse passes through them
+// variable to track mouse state
+let mouseDown = false;
+
+//event listener to listen for when user holds down on mouse click button
+document.body.addEventListener('mousedown', function () {
+    mouseDown = true;
+});
+document.body.addEventListener('mouseup', function () {
+    mouseDown = false;
+})
+
+// Event listener function to produce color effect over squares in grid that changes their color when mouse passes through them while mouse is held down
 function hoverEffect() {
     const squareDivs = document.querySelectorAll('.square-div');
     for (let squareDiv of squareDivs) {
-        // event listener that will "listen" for mouse when it hovers over any of the squares and will trigger function that changes the square's colors based on randomly generated rgb values
+        // event listener that will "listen" for mouse (if it's held down) when it hovers over any of the squares and will trigger function that changes the square's colors based on randomly generated rgb values
         squareDiv.addEventListener('mouseover', function () {
-            squareDiv.style.backgroundColor = `rgb(${randColor()},${randColor()},${randColor()})`;
+            if (mouseDown) {
+                squareDiv.style.backgroundColor = `rgb(${randColor()},${randColor()},${randColor()})`;
+            }
         })
     }
 }
